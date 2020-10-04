@@ -25,7 +25,7 @@ body {
   height: 700px;
   background: $secondColor;
   box-shadow: -2px 1px 15px lighten($secondColor,21%);
-  border-radius: 10px;
+  border-radius: 30px;
 
   transition: .3s;
   animation: popUp .5s linear;
