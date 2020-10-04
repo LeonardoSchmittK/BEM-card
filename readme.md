@@ -2,7 +2,9 @@
 
 - HTML5 
 - CSS3 
+- SASS
 - BEM
+
 
 
 ![screenshot](/src/images/screenshot.png) 
