@@ -6,74 +6,78 @@ html {
   font-size: 30px;
 }
 
+$mainColor: #8a1fc7;
+$secondColor: #242222;
+
+::selection {
+  background: $mainColor;
+}
+
 body {
  display: grid;
  place-content: center;
  height: 100vh;
-
-}
-
-::selection {
-  background: #b76aff;
+ background:url(/src/images/bg.png) center fixed ;
 }
 
 .card {
   max-width: 500px;
   height: 700px;
-  background: rgb(36, 34, 34);
-  box-shadow: -2px 1px 15px #00000098;
+  background: $secondColor;
+  box-shadow: -2px 1px 15px lighten($secondColor,21%);
   border-radius: 10px;
-  transition: 1s ;
+
+  transition: 1s;
+  animation: popUp .5s linear;
 
    &__image {
      width: 100%;
      height: 33%;
-     background: url(/bg-card-epic-games.jpg) center fixed no-repeat;
+     background: url(/src/images/bg-card-epic-games.jpg) center fixed no-repeat;
      margin-bottom: 20px;
      clip-path: circle(100% at 60% -80%  );
      border-radius: inherit;
+
      transition: inherit ;
-     animation: popUp .5s linear;
    }
+
    &:hover &__image {
      clip-path: circle(100% at 45% -65%);
      transition: .5s ease-in-out;
    }
-   &:hover {
-     box-shadow: 12px 10px 1px #8a1fc7;
-     transition: .5s ease-in-out;
 
+   &:hover {
+     box-shadow: 12px 10px 1px $mainColor;
+     transition: .5s ease-in-out;
    }
 
    &__info {
     padding: 30px;
+    color: #fff;
     
      &__title {
-        font-size: 2.2em;
-        font-family: kanit;
-        color: #fff;
-        font-weight: 600;
+      font-size: 2.2em;
+      font-family: kanit;
+      font-weight: 600;
      }
+
      &__badge {
-      position: relative;
+      width: 100px;
       padding: 5px;
       font-family: monospace;
-      color: #fff;
       background-color: #9e3df8;
       box-shadow: inset 10px 10px 10px #ba75fa93;
-      border-radius: 20px;
-      
+      border-radius: 20px;  
+      text-align: center;   
      }
+
      &__description {
       margin-top: 30px;
       font-family: sans-serif;
       letter-spacing: 1px;
-      color: #fff;
       text-align: center;
      }
-   }
-
-   
+   }  
 }
 
 @keyframes popUp {
@@ -82,15 +86,14 @@ body {
    background: none;
    margin-bottom: 50px;
   }
-
- 
 }
 
 @media only screen and (max-width:430px){
    .card {
-    width: 80%;
+     width: 80%;
      height: auto;
-    margin: auto;
+     margin: auto;
+
       &__image {
         display: none;
       }
@@ -104,19 +107,20 @@ body {
       } 
 
       &__info {
+        border: 3px solid grey;
 
-         &__title {
-       font-size: 2em;
-       line-height: 50px;
+       &__title {
+        font-size: 2em;
+        line-height: 1em;
       }
 
-      &__badge {
-       font-size: .6em;
+       &__badge {
+        font-size: .6em;
       }
 
-      &__description {
-       margin-top: 20px;
-       font-size: .7em;
+       &__description {
+        margin-top: 20px;
+        font-size: .7em;
       }
      }   
    }
