@@ -11,4 +11,5 @@
 
 - [x] Use BEM CSS syntax 
 - [x] Use clip-path effect 
+- [x] Make a card 
 - [x] Learn something
